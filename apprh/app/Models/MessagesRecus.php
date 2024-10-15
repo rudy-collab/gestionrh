@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class MessagesRecus extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'message',
+        'titre',
+        'lu',
+        'nonlu',
+        'user_id',
+        'idadmin',
+        'couleur'
+      
+    ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+}
